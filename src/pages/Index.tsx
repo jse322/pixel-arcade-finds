@@ -24,67 +24,111 @@ const Index = () => {
       setIsAnimating(false);
       setShowFireworks(true);
       
-      setTimeout(() => setShowFireworks(false), 1500);
-    }, 600);
+      setTimeout(() => setShowFireworks(false), 2000);
+    }, 800);
   };
 
   useEffect(() => {
-    // Show initial fireworks on first load
-    setTimeout(() => setShowFireworks(true), 300);
-    setTimeout(() => setShowFireworks(false), 1800);
+    setTimeout(() => setShowFireworks(true), 500);
+    setTimeout(() => setShowFireworks(false), 2500);
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative">
-      {/* Subtle grid background */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="grid-pattern"></div>
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Dynamic gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-cyan-50">
+        <div className="absolute inset-0 bg-gradient-to-tr from-purple-50/50 via-transparent to-pink-50/50"></div>
       </div>
       
-      {/* Fireworks effect */}
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-pink-400/20 to-orange-400/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-emerald-400/10 to-cyan-400/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+      </div>
+
+      {/* Floating particles */}
       {showFireworks && (
-        <div className="fireworks absolute inset-0 pointer-events-none z-20">
-          {[...Array(8)].map((_, i) => (
-            <div key={i} className={`star star-${i + 1}`}>✨</div>
+        <div className="fixed inset-0 pointer-events-none z-30">
+          {[...Array(12)].map((_, i) => (
+            <div 
+              key={i} 
+              className="absolute animate-bounce"
+              style={{
+                left: `${10 + (i * 7)}%`,
+                top: `${20 + (i % 3) * 20}%`,
+                animationDelay: `${i * 0.1}s`,
+                animationDuration: '2s'
+              }}
+            >
+              <div className="text-2xl">
+                {['✨', '🎉', '⭐', '💫', '🌟'][i % 5]}
+              </div>
+            </div>
           ))}
         </div>
       )}
 
-      <div className="relative z-10 container mx-auto px-6 py-12 max-w-4xl">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6 pixel-font leading-tight">
-            ONE FUN THING
-          </h1>
-          <h2 className="text-3xl md:text-4xl font-bold text-emerald-400 mb-4 pixel-font">
-            UNDER $10
-          </h2>
-          <p className="text-slate-300 text-lg pixel-font opacity-80">
-            🎮 Discover something amazing 🎮
-          </p>
-        </div>
+      <div className="relative z-10 min-h-screen flex flex-col">
+        {/* Header Section */}
+        <header className="text-center pt-16 pb-8 px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="inline-block mb-6">
+              <span className="inline-block px-4 py-2 bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-200/50 rounded-full text-sm font-medium text-purple-700 backdrop-blur-sm">
+                ✨ Curated Daily Discoveries
+              </span>
+            </div>
+            
+            <h1 className="text-6xl md:text-8xl font-black mb-6 leading-none">
+              <span className="bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900 bg-clip-text text-transparent">
+                ONE FUN
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-emerald-600 to-cyan-600 bg-clip-text text-transparent">
+                THING
+              </span>
+            </h1>
+            
+            <div className="text-2xl md:text-3xl font-bold text-gray-600 mb-4">
+              UNDER <span className="text-emerald-500">$10</span>
+            </div>
+            
+            <p className="text-lg text-gray-500 max-w-md mx-auto leading-relaxed">
+              Discover something delightfully unexpected every day
+            </p>
+          </div>
+        </header>
 
-        {/* Product Display */}
-        <ProductDisplay 
-          product={currentProduct} 
-          isAnimating={isAnimating}
-          showFireworks={showFireworks}
-        />
+        {/* Main Content */}
+        <main className="flex-1 flex items-center justify-center px-6 py-8">
+          <ProductDisplay 
+            product={currentProduct} 
+            isAnimating={isAnimating}
+            showFireworks={showFireworks}
+          />
+        </main>
 
-        {/* Action Button */}
-        <div className="flex justify-center mt-12">
+        {/* Action Section */}
+        <section className="text-center pb-16 px-6">
           <ArcadeButton
             onClick={handleShowAnother}
             variant="secondary"
             disabled={isAnimating}
-            className="text-xl px-8 py-4"
+            className="text-lg px-8 py-4 mx-auto"
           >
-            {isAnimating ? "🎲 ROLLING..." : "🎰 SHOW ME ANOTHER!"}
+            {isAnimating ? (
+              <>
+                <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                Finding magic...
+              </>
+            ) : (
+              <>🎲 Surprise me again!</>
+            )}
           </ArcadeButton>
-        </div>
-      </div>
+        </section>
 
-      <Footer />
+        <Footer />
+      </div>
     </div>
   );
 };
