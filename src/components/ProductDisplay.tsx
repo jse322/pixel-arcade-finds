@@ -15,62 +15,55 @@ const ProductDisplay: React.FC<ProductDisplayProps> = ({
   showFireworks 
 }) => {
   return (
-    <div className="max-w-2xl mx-auto">
-      {/* Capsule Machine Animation Container */}
-      <div className="relative mb-8">
+    <div className="max-w-3xl mx-auto">
+      <div className={`
+        bg-white/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 
+        border border-white/20 shadow-2xl
+        transition-all duration-600 transform
+        ${isAnimating ? 'scale-95 opacity-60' : 'scale-100 opacity-100'}
+        ${showFireworks ? 'shadow-cyan-500/20 shadow-2xl' : ''}
+      `}>
+        {/* Product Image */}
         <div className={`
-          bg-gray-900 rounded-3xl p-8 border-4 border-cyan-400 
-          transition-all duration-800 transform
-          ${isAnimating ? 'scale-95 opacity-70' : 'scale-100 opacity-100'}
-          ${showFireworks ? 'animate-pulse' : ''}
+          relative overflow-hidden rounded-xl mb-8 bg-white/5
+          transition-all duration-600
+          ${isAnimating ? 'animate-pulse' : ''}
         `}>
-          {/* Product Image */}
-          <div className={`
-            relative overflow-hidden rounded-xl mb-6
-            transition-all duration-800
-            ${isAnimating ? 'animate-bounce' : ''}
-          `}>
+          <div className="aspect-square max-w-md mx-auto">
             <img
               src={product.image}
               alt={product.name}
-              className="w-full h-64 md:h-80 object-cover rounded-xl"
+              className="w-full h-full object-cover rounded-xl"
             />
-            {isAnimating && (
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-pink-400 opacity-50 animate-pulse rounded-xl"></div>
-            )}
           </div>
+          {isAnimating && (
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/30 to-pink-400/30 animate-pulse rounded-xl"></div>
+          )}
+        </div>
 
-          {/* Product Info */}
-          <div className="text-center space-y-4">
-            <h3 className="text-xl md:text-2xl font-bold text-yellow-300 pixel-shadow">
-              {product.name}
-            </h3>
-            <p className="text-lg md:text-xl text-pink-300 pixel-font leading-relaxed">
-              {product.caption}
-            </p>
-            <div className="text-3xl md:text-4xl font-bold text-green-400 pixel-shadow">
-              ${product.price}
-            </div>
-          </div>
-
-          {/* Buy Button */}
-          <div className="mt-8 flex justify-center">
-            <ArcadeButton
-              onClick={() => window.open(product.affiliateUrl, '_blank')}
-              variant="primary"
-              className="text-lg md:text-xl px-8 py-4"
-            >
-              🪙 BUY ON AMAZON 🪙
-            </ArcadeButton>
+        {/* Product Info */}
+        <div className="text-center space-y-6">
+          <h3 className="text-2xl md:text-3xl font-bold text-white pixel-font leading-relaxed">
+            {product.name}
+          </h3>
+          <p className="text-lg md:text-xl text-slate-200 pixel-font leading-relaxed max-w-2xl mx-auto">
+            {product.caption}
+          </p>
+          <div className="text-4xl md:text-5xl font-bold text-emerald-400 pixel-font">
+            ${product.price}
           </div>
         </div>
 
-        {/* Capsule Drop Animation */}
-        {isAnimating && (
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full">
-            <div className="w-16 h-16 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full animate-bounce border-4 border-yellow-300"></div>
-          </div>
-        )}
+        {/* Buy Button */}
+        <div className="mt-10 flex justify-center">
+          <ArcadeButton
+            onClick={() => window.open(product.affiliateUrl, '_blank')}
+            variant="primary"
+            className="text-lg md:text-xl px-10 py-5"
+          >
+            🛒 BUY ON AMAZON
+          </ArcadeButton>
+        </div>
       </div>
     </div>
   );

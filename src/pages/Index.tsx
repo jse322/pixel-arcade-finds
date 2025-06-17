@@ -24,46 +24,43 @@ const Index = () => {
       setIsAnimating(false);
       setShowFireworks(true);
       
-      setTimeout(() => setShowFireworks(false), 2000);
-    }, 800);
+      setTimeout(() => setShowFireworks(false), 1500);
+    }, 600);
   };
 
   useEffect(() => {
     // Show initial fireworks on first load
-    setTimeout(() => setShowFireworks(true), 500);
-    setTimeout(() => setShowFireworks(false), 2500);
+    setTimeout(() => setShowFireworks(true), 300);
+    setTimeout(() => setShowFireworks(false), 1800);
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-900 via-pink-900 to-purple-900 relative overflow-hidden">
-      {/* Animated background grid */}
-      <div className="absolute inset-0 opacity-20">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative">
+      {/* Subtle grid background */}
+      <div className="absolute inset-0 opacity-5">
         <div className="grid-pattern"></div>
       </div>
       
-      {/* Scanlines effect */}
-      <div className="scanlines absolute inset-0 pointer-events-none"></div>
-      
       {/* Fireworks effect */}
       {showFireworks && (
-        <div className="fireworks absolute inset-0 pointer-events-none">
-          {[...Array(12)].map((_, i) => (
-            <div key={i} className={`star star-${i + 1}`}>⭐</div>
+        <div className="fireworks absolute inset-0 pointer-events-none z-20">
+          {[...Array(8)].map((_, i) => (
+            <div key={i} className={`star star-${i + 1}`}>✨</div>
           ))}
         </div>
       )}
 
-      <div className="relative z-10 container mx-auto px-4 py-8">
+      <div className="relative z-10 container mx-auto px-6 py-12 max-w-4xl">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold text-cyan-400 mb-4 pixel-shadow animate-pulse">
+        <div className="text-center mb-16">
+          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6 pixel-font leading-tight">
             ONE FUN THING
           </h1>
-          <h2 className="text-2xl md:text-3xl font-bold text-pink-400 mb-2 pixel-shadow">
+          <h2 className="text-3xl md:text-4xl font-bold text-emerald-400 mb-4 pixel-font">
             UNDER $10
           </h2>
-          <p className="text-yellow-300 text-sm md:text-base pixel-font">
-            🎮 PRESS START TO DISCOVER AWESOME STUFF 🎮
+          <p className="text-slate-300 text-lg pixel-font opacity-80">
+            🎮 Discover something amazing 🎮
           </p>
         </div>
 
@@ -74,15 +71,15 @@ const Index = () => {
           showFireworks={showFireworks}
         />
 
-        {/* Action Buttons */}
-        <div className="flex flex-col items-center gap-6 mt-12">
+        {/* Action Button */}
+        <div className="flex justify-center mt-12">
           <ArcadeButton
             onClick={handleShowAnother}
             variant="secondary"
             disabled={isAnimating}
-            className="transform hover:scale-105 transition-transform"
+            className="text-xl px-8 py-4"
           >
-            {isAnimating ? "LOADING..." : "🎰 SHOW ME ANOTHER! 🎰"}
+            {isAnimating ? "🎲 ROLLING..." : "🎰 SHOW ME ANOTHER!"}
           </ArcadeButton>
         </div>
       </div>

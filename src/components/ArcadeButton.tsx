@@ -17,23 +17,24 @@ const ArcadeButton: React.FC<ArcadeButtonProps> = ({
   className = ''
 }) => {
   const baseStyles = `
-    pixel-font font-bold py-3 px-6 rounded-lg transition-all duration-200
-    border-4 transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed
-    shadow-lg hover:shadow-xl
+    pixel-font font-bold rounded-xl transition-all duration-300
+    border-2 transform hover:scale-105 active:scale-95 
+    disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100
+    shadow-lg hover:shadow-xl backdrop-blur-sm
   `;
 
   const variantStyles = {
     primary: `
-      bg-gradient-to-r from-green-400 to-green-500 
-      border-green-300 text-gray-900 
-      hover:from-green-300 hover:to-green-400
-      pixel-shadow-green
+      bg-gradient-to-r from-emerald-500 to-cyan-500 
+      border-emerald-400 text-white 
+      hover:from-emerald-400 hover:to-cyan-400
+      hover:shadow-emerald-500/25
     `,
     secondary: `
-      bg-gradient-to-r from-pink-500 to-purple-500 
-      border-pink-300 text-white 
-      hover:from-pink-400 hover:to-purple-400
-      pixel-shadow-pink
+      bg-gradient-to-r from-purple-500 to-pink-500 
+      border-purple-400 text-white 
+      hover:from-purple-400 hover:to-pink-400
+      hover:shadow-purple-500/25
     `
   };
 
