@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,6 +19,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'pixel': ['Press Start 2P', 'monospace'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -84,11 +88,20 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pixel-glow': {
+					'0%, 100%': { 
+						textShadow: '0 0 5px currentColor, 0 0 10px currentColor' 
+					},
+					'50%': { 
+						textShadow: '0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor' 
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pixel-glow': 'pixel-glow 2s ease-in-out infinite'
 			}
 		}
 	},
