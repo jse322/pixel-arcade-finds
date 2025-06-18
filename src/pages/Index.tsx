@@ -71,15 +71,15 @@ const Index = () => {
 
       <div className="relative z-10 min-h-screen flex flex-col">
         {/* Header Section */}
-        <header className="text-center pt-16 pb-8 px-6">
+        <header className="text-center pt-8 pb-4 px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="inline-block mb-6">
+            <div className="inline-block mb-4">
               <span className="inline-block px-4 py-2 bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-200/50 rounded-full text-sm font-medium text-purple-700 backdrop-blur-sm">
                 ✨ Curated Daily Discoveries
               </span>
             </div>
             
-            <h1 className="text-6xl md:text-8xl font-black mb-6 leading-none">
+            <h1 className="text-4xl md:text-6xl font-black mb-4 leading-none">
               <span className="bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900 bg-clip-text text-transparent">
                 ONE FUN
               </span>
@@ -89,18 +89,18 @@ const Index = () => {
               </span>
             </h1>
             
-            <div className="text-2xl md:text-3xl font-bold text-gray-600 mb-4">
+            <div className="text-xl md:text-2xl font-bold text-gray-600 mb-3">
               UNDER <span className="text-emerald-500">$10</span>
             </div>
             
-            <p className="text-lg text-gray-500 max-w-md mx-auto leading-relaxed">
+            <p className="text-base text-gray-500 max-w-md mx-auto leading-relaxed">
               Discover something delightfully unexpected every day
             </p>
           </div>
         </header>
 
         {/* Main Content */}
-        <main className="flex-1 flex items-center justify-center px-6 py-8">
+        <main className="flex-1 flex items-center justify-center px-6 py-4">
           <ProductDisplay 
             product={currentProduct} 
             isAnimating={isAnimating}
@@ -109,7 +109,7 @@ const Index = () => {
         </main>
 
         {/* Action Section */}
-        <section className="text-center pb-16 px-6">
+        <section className="text-center pb-8 px-6">
           <ArcadeButton
             onClick={handleShowAnother}
             variant="secondary"
@@ -118,7 +118,7 @@ const Index = () => {
           >
             {isAnimating ? (
               <>
-                <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-gray-900 mr-2"></div>
                 Finding magic...
               </>
             ) : (
