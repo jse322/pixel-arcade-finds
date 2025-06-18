@@ -28,18 +28,20 @@ const ArcadeButton: React.FC<ArcadeButtonProps> = ({
 
   const variantStyles = {
     primary: `
-      bg-gradient-to-r from-emerald-500 to-cyan-500 
-      border-emerald-400/50 text-white font-black
-      hover:from-emerald-400 hover:to-cyan-400
-      focus:ring-emerald-500/50
-      shadow-emerald-500/25 hover:shadow-emerald-500/40
+      bg-gradient-to-r from-gray-900 to-gray-800 
+      border-gray-700/50 text-white font-black
+      hover:from-gray-800 hover:to-gray-700
+      focus:ring-gray-500/50
+      shadow-gray-900/25 hover:shadow-gray-900/40
+      hover:border-gray-600/50
     `,
     secondary: `
-      bg-gradient-to-r from-purple-500 to-pink-500 
-      border-purple-400/50 text-white font-black
-      hover:from-purple-400 hover:to-pink-400
-      focus:ring-purple-500/50
-      shadow-purple-500/25 hover:shadow-purple-500/40
+      bg-gradient-to-r from-gray-100 to-gray-50 
+      border-gray-300/50 text-gray-900 font-black
+      hover:from-white hover:to-gray-100
+      focus:ring-gray-400/50
+      shadow-gray-500/25 hover:shadow-gray-500/40
+      hover:border-gray-400/50
     `
   };
 
@@ -50,7 +52,7 @@ const ArcadeButton: React.FC<ArcadeButtonProps> = ({
       className={`${baseStyles} ${variantStyles[variant]} ${className}`}
     >
       {/* Animated background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
       
       {/* Button content */}
       <span className="relative z-10">
