@@ -4,82 +4,82 @@ import { Product } from '../types/Product';
 export const products: Product[] = [
   {
     id: 1,
-    name: "Banana Slicer",
-    caption: "Because cutting fruit is a full-time job 🍌",
+    name: "Amazon Basics Balance de Cuisine",
+    caption: "Pesez vos ingrédients avec précision, compact et facile.",
     price: 8.99,
-    image: "https://images.unsplash.com/photo-1587132137056-bfbf0166836e?w=500&h=400&fit=crop",
-    affiliateUrl: "https://www.amazon.com/dp/B0047E0EII"
+    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&h=400&fit=crop",
+    affiliateUrl: "https://www.amazon.com/dp/B014HOQ0R6"
   },
   {
     id: 2,
-    name: "Taco Cat Jigsaw Puzzle",
-    caption: "A palindrome and a snack — mental fuel 🧩🌮",
+    name: "Support de Téléphone Flexible",
+    caption: "Positionnez votre mobile comme vous voulez.",
     price: 9.95,
-    image: "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=500&h=400&fit=crop",
-    affiliateUrl: "https://www.amazon.com/dp/B084Q4Y45T"
+    image: "https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?w=500&h=400&fit=crop",
+    affiliateUrl: "https://www.amazon.com/dp/B07XYZ"
   },
   {
     id: 3,
-    name: "Mini Wacky Waving Inflatable Tube Guy",
-    caption: "Office stress? Not anymore. 🙌",
+    name: "Anneau Décapsuleur",
+    caption: "Un anneau stylé pour ouvrir vos bouteilles d'un geste.",
     price: 7.99,
-    image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=500&h=400&fit=crop",
-    affiliateUrl: "https://www.amazon.com/dp/0762462872"
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=400&fit=crop",
+    affiliateUrl: "https://www.amazon.com/dp/B07ABC"
   },
   {
     id: 4,
-    name: "LED Toilet Night Light",
-    caption: "Turn your bathroom into a rave 🚽💡",
+    name: "Masseur de Cuir Chevelu",
+    caption: "Détendez-vous avec ce gadget relaxant.",
     price: 9.49,
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=400&fit=crop",
-    affiliateUrl: "https://www.amazon.com/dp/B01N4B6XOY"
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=400&fit=crop",
+    affiliateUrl: "https://www.amazon.com/dp/B08DEF"
   },
   {
     id: 5,
-    name: "Finger Hands (5-pack)",
-    caption: "Because one set of hands just isn't enough ✋",
+    name: "3‑en‑1 Pèle‑Avocat",
+    caption: "Coupe, enlève le noyau et tranche en un outil.",
     price: 6.99,
-    image: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=500&h=400&fit=crop",
-    affiliateUrl: "https://www.amazon.com/dp/B00V9DSNIK"
+    image: "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=500&h=400&fit=crop",
+    affiliateUrl: "https://www.amazon.com/dp/B07GHI"
   },
   {
     id: 6,
-    name: "Emergency Underpants",
-    caption: "Better to have and not need... 🩲",
+    name: "Mini Aspirateur de Bureau",
+    caption: "Nettoyez votre clavier en deux secondes.",
     price: 8.50,
-    image: "https://images.unsplash.com/photo-1509587584298-0f3b3a3a1797?w=500&h=400&fit=crop",
-    affiliateUrl: "https://www.amazon.com/dp/B0006GQ0HC"
+    image: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500&h=400&fit=crop",
+    affiliateUrl: "https://www.amazon.com/dp/B07JKL"
   },
   {
     id: 7,
-    name: "Pizza Cutter Scissors",
-    caption: "Slice and serve like a lazy genius 🍕✂️",
+    name: "Multi-outil Pince à Cheveux",
+    caption: "Tool discret qui s'accroche dans les cheveux.",
     price: 9.99,
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=500&h=400&fit=crop",
-    affiliateUrl: "https://www.amazon.com/dp/B07Y2T6D1Z"
+    image: "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=500&h=400&fit=crop",
+    affiliateUrl: "https://www.amazon.com/dp/B07MNO"
   },
   {
     id: 8,
-    name: "Unicorn Bandages",
-    caption: "Heal faster with mythical energy 🦄",
+    name: "Bracelet Diffuseur Aroma",
+    caption: "Diffusez votre huile essentielle toute la journée.",
     price: 5.99,
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&h=400&fit=crop",
-    affiliateUrl: "https://www.amazon.com/dp/B01MYF5KKE"
+    image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500&h=400&fit=crop",
+    affiliateUrl: "https://www.amazon.com/dp/B07PQR"
   },
   {
     id: 9,
-    name: "Yodeling Pickle",
-    caption: "It yodels. It's a pickle. Enough said. 🥒🎶",
+    name: "Cuillères Doseuses Magnétiques",
+    caption: "Elles s'aimantent pour ne jamais se perdre.",
     price: 8.99,
-    image: "https://images.unsplash.com/photo-1553978297-833d09932d51?w=500&h=400&fit=crop",
-    affiliateUrl: "https://www.amazon.com/dp/B0010VS078"
+    image: "https://images.unsplash.com/photo-1556909114-4f6e0f39664c?w=500&h=400&fit=crop",
+    affiliateUrl: "https://www.amazon.com/dp/B07STU"
   },
   {
     id: 10,
-    name: "Pooping Pooches Calendar",
-    caption: "Dogs. Nature. Poop. A masterpiece. 📅🐶💩",
+    name: "Clip Anti-Ronflement",
+    caption: "Respirez mieux la nuit avec ce simple clip.",
     price: 9.95,
-    image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?w=500&h=400&fit=crop",
-    affiliateUrl: "https://www.amazon.com/dp/B0BZFC5CBF"
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=500&h=400&fit=crop",
+    affiliateUrl: "https://www.amazon.com/dp/B07VWX"
   }
 ];
